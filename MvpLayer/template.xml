@@ -1,0 +1,106 @@
+<template format="4"
+	revision="1"
+	name="MvpLayer"
+	description="Creates the new MVP classes Model, View and Presenter">
+
+	<category value="MVP"/>
+
+	<parameter 
+		id="mainPackageName" 
+		name ="Main package name"
+		type="string"
+		constraints="package"/>
+
+	<parameter
+		id="adapter"
+		name="Need Custom RecyclerView Adapter?"
+		type="boolean"
+		default="true"
+		help="Allows to create Custom RecyclerView Adapter if necessary"/>
+
+	<parameter
+		id="adapterClassName"
+		name="RecyclerView Adapter Name"
+		type="string"
+		default="RecyclerViewAdapter"
+		constraints="class"
+		visibility="adapter"
+		help="Creates the RecyclerView Adapter"/>
+
+	<parameter
+		id="itemClassName"
+		name="RecyclerView Adapter Item Name"
+		type="string"
+		constraints="class"
+		default="Item"
+		visibility="adapter"
+		help="Item whose RecyclerView Adapter needs to be created"/>
+
+	<parameter
+		id="viewHolderClassName"
+		name="RecyclerView Adapter ViewHolder Name"
+		type="string"
+		default="ViewHolder"
+		constraints="class"
+		visibility="adapter"
+		help="Name of the ViewHolder inside the RecyclerView Adapter"/>
+
+	<parameter id="className"
+		name="Module Name"
+		type="string"
+		constraints="class|nonempty"
+		default="ModuleName"
+		help="The name of the functionality that requires MVP views"/>
+
+
+
+
+	<parameter
+		id="modelName"
+		name="Response Model Object"
+		type="string"
+		constraints="class|nonempty"
+		help="The regular getter/setter Object(POJO, Entity, Model)"/>
+
+
+	<parameter
+		id="responseType"
+		name="List or regular object"
+		type="boolean"
+		default="false"
+		constraints="nonempty|class"
+		help="The json response is  just Object(POJO, Entity, Model) or is List/ArrayList of Object"/>
+
+	<parameter
+		id="responseName"
+		name="Response Name"
+		type="string"
+		constraints="class|nonempty|unique"
+		help="This class is Response object when API is called"/>
+
+
+	<parameter
+		id="requestClassName"
+		name="Request Class Name"
+		type="string"
+		constraints="class|nonempty|unique"
+		help="The class makes request to API/WebServices"/>
+
+
+
+	<parameter
+		id="viewInterfaceName"
+		name="View Interface Name"
+		type="string"
+		constraints="class|nonempty|unique"
+		help="This class is View layer of MVP design pattern"/>
+
+    <thumbs>
+        <thumb>mvp.png</thumb>
+    </thumbs>
+
+	<globals file="globals.xml.ftl" />
+	<execute file="recipe.xml.ftl" />
+
+
+</template>

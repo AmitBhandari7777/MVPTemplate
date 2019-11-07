@@ -1,0 +1,33 @@
+<template format="4"
+	revision="1"
+	name="MvpCore"
+	description="Creates the core MVP protocol that is implemented by all Model, View and Presenter">
+
+	<category value="MVP"/>
+
+
+	<parameter
+		id="basePresenterInterface"
+		name="Base Presenter Name"
+		type="string"
+		default="BasePresenter"
+		constraints="class|nonempty|unique"
+		help="Parent Presenter Interface which is implemented by all child Presenter at MvpLayer"/>
+
+	<parameter
+		id="baseViewInterface"
+		name="Base View Name"
+		type="string"
+		default="BaseView"
+		constraints="class|nonempty|unique"
+		help="Parent View Interface which is implemented by all the child View(s) at MvpLayer"/>
+
+    <thumbs>
+        <thumb>MvpCore.png</thumb>
+    </thumbs>
+
+	<globals file="globals.xml.ftl" />
+	<execute file="recipe.xml.ftl" />
+
+
+</template>
